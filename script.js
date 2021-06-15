@@ -10,11 +10,11 @@ class Calculator {
       this.previousOperand = ''
       this.operation = undefined
     }
-
+     //this function clears every number you typed in the screen
     delete() {
        this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
-
+    //this function clears one number at a time
     appendNumber(number) {
         if (number === '.' && this.currentOperand.includes('.')) return
         this.currentOperand = this.currentOperand.toString() + number.toString()
@@ -29,7 +29,7 @@ class Calculator {
        this.previousOperand = this.currentOperand
        this.currentOperand = ''
     }
-
+     //this function lets you chose want operation you want to type 
     compute() {
         let computation
         const prev = parseFloat(this.previousOperand)
@@ -55,7 +55,7 @@ class Calculator {
         this.operation = undefined
         this.previousOperand = ''
     }
-
+     //this function lets the operation buttons work when you click on them
     getDisplayNumber(number) {
         const stringNumber = number.toString()
         const integerDigits = parseFloat(stringNumber.split('.')[0])
@@ -72,7 +72,7 @@ class Calculator {
           return integerDisplay
         }
     }
-      
+      //this function makes the number buttons to work so if you click on them they will show up on the screen
 
     updateDisplay() {
         this.currentOperatorTextElement.innerText =
@@ -85,7 +85,7 @@ class Calculator {
       }
     }
   }
-     
+       //this function updates the display of the calculator, so everytime you press a number it updates the display so you can see it
     
     
 const numberButtons = document.querySelectorAll('[data-number]')
@@ -103,7 +103,7 @@ numberButtons.forEach(button => {
       calculator.updateDisplay()
    })
 })
-
+    
 operationButtons.forEach(button => {
     button.addEventListener('click', () => {
        calculator.chooseOperation(button.innerText)

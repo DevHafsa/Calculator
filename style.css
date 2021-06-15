@@ -9,7 +9,7 @@ font-weight: normal;
    margin: 0;
    background: linear-gradient(to right, #ffc0ff, #9370d8);
  }
- 
+
  .calculator-grid {
     display: grid;
     justify-content: center;
